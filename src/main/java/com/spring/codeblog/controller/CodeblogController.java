@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,7 +34,7 @@ public class CodeblogController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
+	@GetMapping(value="/posts/{id}")	
 	//returns post details
 	public ModelAndView getPostsDetails(@PathVariable("id") long id) {
 		String postDetails = "postDetails";
