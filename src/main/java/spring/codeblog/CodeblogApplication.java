@@ -1,4 +1,4 @@
-package com.spring.codeblog;
+package spring.codeblog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
