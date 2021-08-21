@@ -1,4 +1,4 @@
-package com.spring.codeblog.controller;
+package com.spring.codeblog;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,7 +34,7 @@ public class CodeblogController {
 		return mv;
 	}
 	
-	@GetMapping(value="/posts/{id}")	
+	@RequestMapping(value="/posts/{id}")	
 	//returns post details
 	public ModelAndView getPostsDetails(@PathVariable("id") long id) {
 		String postDetails = "postDetails";
