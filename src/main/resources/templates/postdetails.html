@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+minimum-scale=1">
+<script>function myFunction() {document.getElementById("lside").classList.toggle("lside-show");}</script>	
+<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<title>Blog</title>
+	<link rel="stylesheet" href="https://rafaelvilaruelsportfolio.000webhostapp.com/assets/style.css">    
+	
+    <title>Rafael Vilaruel</title>     	
+         
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+	<body>	
+			<div class="container">
+			<header class="header">       		
+        		<div class="head-title">
+					<h1><a href="/posts">Rafael Vilaruel</a></h1>
+					<p>Java Developer/Tech Recruiter</p>
+				</div>
+
+				<div class="head-nav">
+					<a href="#" id="nav" onclick="myFunction();"><img src="https://rafaelvilaruelsportfolio.000webhostapp.com/menu%20(2).png" width="30px" height="30px" style = "filter: invert(100%);"></a>
+				</div>
+			</header>
+
+			<aside class="lside" id="lside">
+				<div class="block">
+					<div class="title">Navegação</div>
+
+					<ul>
+						<li><a href="#">Blog</a></li>
+						<li><a href="http://rafaelvilaruelsportfolio.000webhostapp.com/">Portfolio</a></li>
+						<li><a href="https://www.linkedin.com/in/rafaelvilaruel/">Linkedin</a></li>
+						<li><a href="/newpost">Login</a></li>
+						
+					</ul>
+				</div>
+
+				<div class="block">
+					<div class="title">Projetos</div>
+
+					<ul>
+						<li><a href="#">Iaycha</a></li>
+						<li><a href="#">Inception v1</a></li>
+						<li><a href="#">Jogo Celular Motorola </a></li>
+						<li><a href="#">Jokenpô JS Online</a></li>
+						<li><a href="#">Controle de Pedidos</a></li>
+						<li><a href="#">Jokenpô Java</a></li>
+					</ul>
+				</div>
+
+				<div class="block">
+					<div class="title">Contato</div>
+
+					<ul>
+						<li><a href="https://www.linkedin.com/in/rafaelvilaruel/" class="clr-white underline">Linkedin</a></li>
+						<li><a href="https://api.whatsapp.com/send?phone=5511953324259" class="clr-white underline">WhatsApp</a></li>
+						<li><a href="http://rafaelvilaruelsportfolio.000webhostapp.com/assets/Rafael%20Vilaruel%20-%20Resume.pdf" class="clr-white underline">Curriculo</a></li>
+					</ul>
+				</div>
+			</aside>
+
+			<div class="space"></div>
+
+			<main class="content">
+			 <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px; margin:0; font-family: 'Segoe UI';">
+                <li class="breadcrumb-item"><a href="/posts">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        </nav>
+        <div itemscope itemtype="http://schema.org/SoftwareApplication"><h1 style="font-size: 1.7rem; font-family: 'Segoe UI'; font-weight:bold;" itemprop="name" th:text="${post.title}"></h1>
+			
+				<div style="font-size: 11px;">Escrito por <span itemprop="author" th:text="${post.author}"></span><br>em <span th:text="|${#temporals.format(post.data, 'dd-MM-yyyy')} |"></span></div>
+				
+				<!--  <div>Primeiro lançamento: <time itemprop="pubdate" datetime="2011-10-27 06:00:00" title="Thu, 27 Oct 2011 06:00:00 +0600"><mark>06-JUN-2021</mark></time></div>
+				<div>Ultima atualização: <time itemprop="dateModified" datetime="2019-02-10 11:47:09" title="Sun, 10 Feb 2019 11:47:09 +0600"><mark>01-JUL-2021</mark></time></div>				
+				<div>Linguagem: <span><mark>Java</mark></span></div>
+				<div>Arquitetura da plataforma: <span itemprop="operatingSystem"><mark>32-bit/64-bit</mark></span></div>
+				<div>SO compatível: <span itemprop="operatingSystem">Windows XP (SP 3), Vista, 7, 8, 8.1, 10, Intel-based Mac running Mac OS X 10.8.3+, 10.9+,Oracle Linux 6.x+ (32-bit), 6.x+ (64-bit) </span></div>
+				-->
+				
+				<hr/>			
+               
+                        
+                <p class="card-text"><span th:utext="${post.text}"></span></p>
+
+				</main>
+			
+		</div>
+	
+</body>
+</html> 

@@ -1,0 +1,104 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<script>function myFunction() {document.getElementById("lside").classList.toggle("lside-show");}</script>	
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+minimum-scale=1">
+<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<title>Blog</title>
+	<link rel="stylesheet" href="https://rafaelvilaruelsportfolio.000webhostapp.com/assets/style.css">    
+	
+    <title>Rafael Vilaruel</title>     	
+         
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+			<header class="header">       		
+        		<div class="head-title">
+					<h1><a href="/posts">Rafael Vilaruel</a></h1>
+					<p>Java Developer/Tech Recruiter</p>
+				</div>
+
+				<div class="head-nav">
+					<a href="#" id="nav" onclick="myFunction();"><img src="https://rafaelvilaruelsportfolio.000webhostapp.com/menu%20(2).png" width="30px" height="30px" style = "filter: invert(100%);"></a>
+				</div>
+			</header>
+
+			<aside class="lside" id="lside">
+				<div class="block">
+					<div class="title">Navegação</div>
+
+					<ul>
+						<li><a href="#">Blog</a></li>
+						<li><a href="http://rafaelvilaruelsportfolio.000webhostapp.com/">Portfolio</a></li>
+						<li><a href="https://www.linkedin.com/in/rafaelvilaruel/">Linkedin</a></li>
+						<li><a href="/newpost">Login</a></li>
+						
+					</ul>
+				</div>
+
+				<div class="block">
+					<div class="title">Projetos</div>
+
+					<ul>
+						<li><a href="#">Iaycha</a></li>
+						<li><a href="#">Inception v1</a></li>
+						<li><a href="#">Jogo Celular Motorola </a></li>
+						<li><a href="#">Jokenpô JS Online</a></li>
+						<li><a href="#">Controle de Pedidos</a></li>
+						<li><a href="#">Jokenpô Java</a></li>
+					</ul>
+				</div>
+
+				<div class="block">
+					<div class="title">Contato</div>
+
+					<ul>
+						<li><a href="https://www.linkedin.com/in/rafaelvilaruel/" class="clr-white underline">Linkedin</a></li>
+						<li><a href="https://api.whatsapp.com/send?phone=5511953324259" class="clr-white underline">WhatsApp</a></li>
+						<li><a href="http://rafaelvilaruelsportfolio.000webhostapp.com/assets/Rafael%20Vilaruel%20-%20Resume.pdf" class="clr-white underline">Curriculo</a></li>
+					</ul>
+				</div>
+			</aside>
+								
+			<main class="content">   			   
+        <div class="card shadow-sm bg-white rounded" style ="border: 0px solid rgba(0,0,0,.125);" th:each="post : ${posts}">
+            
+            <div style = "padding-top: 1rem; padding-bottom:1rem;">
+                           
+                <a th:href="${(#mvc.url('CC#getPostsDetails').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; border-bottom: 1px solid; color: black; padding-top: 5px;"><span th:text="${post.title}"></span></h4></a>
+               
+                <div class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
+                    <span th:text="${post.id}"></span>
+                    <span th:text="|${#temporals.format(post.data, 'dd-MM-yyyy')} |"></span>
+                </div>
+                        
+                <p class="card-text" style="font-weight: normal"><spanass class="textblog" th:utext="${#strings.abbreviate(post.text,700)} "></spanass></p>
+                 
+               
+            </div>
+        </div>
+    </main>
+   
+		</div>
+
+					
+			</div>
+    
+    
+    
+    
+	
+</body>
+
+</html>
